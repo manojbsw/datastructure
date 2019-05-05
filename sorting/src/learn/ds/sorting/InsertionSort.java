@@ -43,4 +43,6 @@ public class InsertionSort {
  * Best = O(n)
  * Worst = O(n2)
  * Average =  
+ * 
+ * in place sorting algo so space complexity = o(1)
 */
