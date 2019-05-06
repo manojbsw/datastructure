@@ -13,71 +13,54 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 		int[] arr = new int[] {8,9,2,4,6,3};
-		mergeSort(arr);
+		mergeSort(arr, 0 , arr.length-1);
 		for(int i : arr) {
 			System.out.println(i); 
 		}
 	}
 
-	public static void mergeSort(int arr[]) {
-		int n = arr.length;
-		if (n < 2) 
-			return ;
-		int mid = n/2;
+	public static void mergeSort(int arr[], int start, int end) {
 		
-		int[] left = new int[mid];
-		
-		int[] right = new int[n-mid];
-		
-		int i =0;
-		while(i < mid) {
-			left[i] = arr[i];
-			i++;
+		if (start < end) {
+			int mid = (start+end)/2;
+			mergeSort(arr, start, mid);
+			mergeSort(arr, mid+1, end);
+			merge(arr, start, mid, end)	;
 		}
-		i = mid;
-		int k =0;
-		while(i < n) {
-			right[k] = arr[i];
-			i++;
-			k++;
-		}
-		
-		mergeSort(left);
-		mergeSort(right);
-	    merge(left, right, arr)	;
 	}
 	
-	public static void merge(int[] left, int[] right, int[] arr) {
+	public static void merge(int[] arr, int start, int mid, int end) {
 		
-		int n = left.length;
-		int l = right.length;
+        int[] temp = new int[end-start+1];
+        
+        int i = start, j = mid+1, k=0; 
 		
-		int i =0;
-		int j = 0;
-		int k = 0;
 		
-		while(i < n && j < l) {
+		while(i <= mid && j <= end) {
 			
-			if (left[i] < right[j])  {
-				arr[k] = left[i];
+			if (arr[i] <= arr[j])  {
+				temp[k] = arr[i];
 				k++;
 				i++;
 			}
-			else if (left[i] > right[j]) {
-				arr[k] = right[j];
+			else {
+				temp[k] = arr[j];
 				k++;
 				j++;
 			}
 		}
-		while(i<n) {
-			arr[k] = left[i];
+		while(i<=mid) {
+			temp[k] = arr[i];
 			k++;
 			i++;
 		}
-		while(j<n) {
-			arr[k] = right[j];
+		while(j<=end) {
+			temp[k] = arr[j];
 			k++;
 			j++;
+		}
+		for(i = start; i<=end; i++) {
+			arr[i] = temp[i-start];
 		}
 		
 	}
