@@ -19,8 +19,8 @@ public class FindStepSize {
 
 	public static void main(String[] args) {
 		
-		int[] x = {1,3,5};
-		int totalStairCase = 5;
+		int[] x = {1,2,3};
+		int totalStairCase = 4;
 		//long startTime = System.currentTimeMillis();
         System.out.println("Recursive Approach " + waysToClimb(x, totalStairCase));
         

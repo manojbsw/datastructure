@@ -56,7 +56,7 @@ public class SpiralPrint {
 		
 		list1.add(alist1);
 		
-		spiralOrder(list1);
+		spiralOrder(list);
 		
 	}
 	

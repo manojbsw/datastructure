@@ -25,14 +25,33 @@ public class FindDuplicate
 		// no duplicate found
 		return -1;
 	}
+	
+	// Function to print duplicates 
+   static void printRepeating(int arr[], int size) 
+    { 
+        int i;   
+        System.out.println("The repeating elements are : "); 
+     
+        for (i = 0; i < size; i++) 
+        { 
+            if (arr[Math.abs(arr[i])] >= 0) 
+                arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])]; 
+            else
+                System.out.print(Math.abs(arr[i]) + " "); 
+        }          
+    }  
 
 	// main function
 	public static void main (String[] args)
 	{
 		// input array contains n numbers between [1 to n - 1]
 		// with one duplicate, where n = A.length
-		int[] A = { 500, 2, 3, 4, 4 };
+		//int[] A = { 500, 2, 3, 4, 4 };
+		
+		int A[] = {1, 2, 3, 1, 3, 6, 6}; 
 
-		System.out.println("Duplicate element is " + findDuplicate(A));
+		//System.out.println("Duplicate element is " + findDuplicate(A));
+		
+		printRepeating(A, A.length);
 	}
 }

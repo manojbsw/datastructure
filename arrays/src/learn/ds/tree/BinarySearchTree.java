@@ -12,6 +12,10 @@ private TreeNode root;
 		root = insertNode(root, value);
 	}
 	
+	public TreeNode getRooNode() {
+		return root;
+	}
+	
 	private TreeNode insertNode(TreeNode root, int value) {
 		
 		if(root == null) {

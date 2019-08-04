@@ -2,6 +2,7 @@ package learn.ds.graph;
 
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -110,7 +111,7 @@ class Graph {
 	}
 	
 	public Set<Integer> getAdjacencyVertex(int u) {
-		return adjcent[u];
+		return (adjcent[u] != null) ? adjcent[u] : Collections.emptySet();
 	}
 	
 	public Set[] getAllVertex() {
