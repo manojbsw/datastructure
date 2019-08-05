@@ -54,7 +54,7 @@ public class ByTesm2_Philosopher {
 					arr[i][j] = arr[i][j] + Math.max(arr[i-1][j-1], Math.max(arr[i-1][j], arr[i-1][j+1]));
 				}
 				else if(j == 0) {
-					arr[i][j] = arr[i][j] + Math.max(arr[i][j+1], arr[i-1][j]);
+					arr[i][j] = arr[i][j] + Math.max(arr[i-1][j+1], arr[i-1][j]);
 				}
 				else {
 					arr[i][j] = arr[i][j] + Math.max(arr[i-1][j-1], arr[i-1][j]);
