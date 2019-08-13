@@ -36,9 +36,11 @@ public class CharacterDecoding {
 		}
 		
 		result = findways_dp(s, k-1, memo);
-		int doubleDigit = Integer.parseInt(s[firstIndex] + "" + s[firstIndex+1]);
-		if(doubleDigit > 9 && doubleDigit < 27) {
-			result = result + findways_dp(s, k-2, memo);
+		if(firstIndex+1 < s.length) {
+			int doubleDigit = Integer.parseInt(s[firstIndex] + "" + s[firstIndex+1]);
+			if(doubleDigit > 9 && doubleDigit < 27) {
+				result = result + findways_dp(s, k-2, memo);
+			}
 		}
 		memo[k] = result;
 		return result;

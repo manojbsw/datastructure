@@ -1,4 +1,4 @@
-package learn.ds.arrays;
+package learn.ds.graph;
 /**
  * https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/
  * @author manoj
